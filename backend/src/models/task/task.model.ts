@@ -18,6 +18,9 @@ export class Task extends Model<Task> {
   @Column({type: DataType.BOOLEAN, defaultValue: false})
   isCompleted: boolean;
 
+  @Column(DataType.DATE)
+  dueAt: Date;
+
   @Column({type: DataType.INTEGER, allowNull: false})
   @ForeignKey(() => User)
   userId: number;
