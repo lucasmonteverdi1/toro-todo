@@ -12,7 +12,16 @@ export class TaskService {
     return this.taskModel.create(task)
   }
 
-  async update(id: number, updateTaskDto: UpdateTaskDto): Promise<Task | null> {
+  async updateTask(id: number, updateTaskDto: UpdateTaskDto): Promise<Task | null> {
     return null;
+  }
+
+  async deleteTask(id: number): Promise<void> {
+    
+  }
+
+  // TODO modify
+  async getTasksByUserId(userId: number): Promise<Task[]> {
+    return this.taskModel.findAll();
   }
 }

@@ -5,9 +5,15 @@ import { CreateUserDto } from "./dto/create-user.dto";
 
 @Injectable()
 export class UserService {
+
+  /* NOTE: userModel can be used as a REPOSITORY. */
   constructor(@InjectModel(User) private readonly userModel: typeof User) { }
 
-  async createTask(task: CreateUserDto): Promise<User> {
+  async createUser(task: CreateUserDto): Promise<User> {
     return this.userModel.create(task)
+  }
+
+  async getUserById(id: number): Promise< User | null > {
+    return this.userModel.findByPk(id);
   }
 }
