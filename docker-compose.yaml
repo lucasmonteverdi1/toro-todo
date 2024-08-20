@@ -13,5 +13,24 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  backend:
+    container_name: nest-backend
+    build: ./backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+  frontend:
+    container_name: react-frontend
+    build:
+      context: ./frontend
+      dockerfile: dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+
 volumes:
   pgdata:
