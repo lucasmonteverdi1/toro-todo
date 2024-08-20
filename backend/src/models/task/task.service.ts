@@ -17,7 +17,7 @@ export class TaskService {
   }
 
   async deleteTask(id: number): Promise<void> {
-    
+
   }
 
   // TODO modify

@@ -9,4 +9,4 @@ import {TaskService} from "./task.service";
   controllers: [TaskService],
   exports: [TaskService],
 })
-export class TodoModule {}
+export class TaskModule {}
