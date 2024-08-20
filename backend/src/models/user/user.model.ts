@@ -10,6 +10,9 @@ export class User extends Model<User> {
   id: number;
 
   @Column({type: DataType.STRING, allowNull: false})
+  email: string;
+
+  @Column({type: DataType.STRING, allowNull: false})
   username: string;
 
   @Column({type: DataType.STRING, allowNull: false})
