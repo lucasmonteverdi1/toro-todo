@@ -7,7 +7,7 @@ import {
   MinLength,
   MaxLength,
 } from 'class-validator';
-import { Type } from 'class-transformer/types/decorators';
+import { Type } from 'class-transformer';
 
 export class CreateTaskDto {
   @IsInt()

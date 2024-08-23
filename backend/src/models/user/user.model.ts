@@ -4,9 +4,11 @@ import {Task} from "../task/task.model";
 @Table
 export class User extends Model<User> {
 
-  @Column(DataType.INTEGER)
   @PrimaryKey
   @AutoIncrement
+  @Column({
+    type: DataType.INTEGER,
+    allowNull: false})
   id: number;
 
   @Column({type: DataType.STRING, allowNull: false})
