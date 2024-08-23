@@ -1,26 +1,27 @@
 import React from "react";
 
+
 function LandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
-      <div className="text-center p-8 max-w-lg bg-white rounded-lg shadow-lg">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Welcome to Your To-Do List App
+      <div className="text-center p-10 max-w-xl bg-white bg-opacity-90 rounded-2xl shadow-2xl">
+        <h1 className="text-5xl font-extrabold text-gray-800 mb-6">
+          Welcome to TORO's To-Do List App
         </h1>
-        <p className="text-lg text-gray-600 mb-8">
+        <p className="text-lg text-gray-700 mb-8">
           Organize your tasks and boost your productivity with our simple and
           efficient To-Do list app. Get started today!
         </p>
-        <div className="flex justify-center">
+        <div className="flex justify-center space-x-6">
           <a
-            href="/signup"
-            className="bg-blue-500 text-white px-6 py-3 rounded-lg mr-4 hover:bg-blue-600 transition"
+            href="/register"
+            className="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-blue-700 transition transform hover:scale-105"
           >
             Sign Up
           </a>
           <a
             href="/login"
-            className="bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition"
+            className="bg-gray-800 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-900 transition transform hover:scale-105"
           >
             Log In
           </a>
