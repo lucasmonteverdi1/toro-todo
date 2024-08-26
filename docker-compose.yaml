@@ -12,9 +12,15 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   backend:
     container_name: nest-backend
+    command: npm run start:dev
     build:
       context: ./backend
       dockerfile: dockerfile
