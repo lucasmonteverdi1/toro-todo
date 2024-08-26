@@ -5,10 +5,6 @@ import {UserModule} from "./models/user/user.module";
 import {TaskModule} from "./models/task/task.module";
 import { SequelizeModule } from '@nestjs/sequelize';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import {TaskController} from "./models/task/task.controller";
-import {UserController} from "./models/user/user.controller";
-import {TaskService} from "./models/task/task.service";
-import {UserService} from "./models/user/user.service";
 
 @Module({
   imports: [
@@ -17,7 +13,7 @@ import {UserService} from "./models/user/user.service";
     }),
     SequelizeModule.forRoot({
       dialect: 'postgres',
-      host: 'postgres', // This should match the service name in docker-compose
+      host: 'localhost', // This should match the service name in docker-compose
       port: 5432,
       username: 'postgres',
       password: 'password', // Make sure this matches the environment setting
@@ -29,7 +25,6 @@ import {UserService} from "./models/user/user.service";
     UserModule,
     TaskModule,
   ],
-  controllers: [TaskController, UserController],
-  providers: [TaskService, UserService],
+  controllers: [],
 })
 export class AppModule {}
