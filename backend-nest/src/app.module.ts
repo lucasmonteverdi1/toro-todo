@@ -13,10 +13,10 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     }),
     SequelizeModule.forRoot({
       dialect: 'postgres',
-      host: 'localhost', // This should match the service name in docker-compose
+      host: 'localhost',
       port: 5432,
       username: 'postgres',
-      password: 'password', // Make sure this matches the environment setting
+      password: 'password',
       database: 'postgres',
       models: [User, Task],
       autoLoadModels: true,
