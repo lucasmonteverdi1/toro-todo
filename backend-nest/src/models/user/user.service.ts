@@ -16,4 +16,8 @@ export class UserService {
   async getUserById(id: number): Promise< User | null > {
     return this.userModel.findByPk(id);
   }
+
+  async findByEmail(email: string): Promise<User | null> {
+    return this.userModel.findOne({ where: { email } });
+  }
 }
