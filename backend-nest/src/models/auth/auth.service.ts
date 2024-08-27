@@ -12,8 +12,7 @@ export class AuthService {
     private jwtService: JwtService,
     @InjectModel(User)
     private userRepository: typeof User,
-  ) {}
-
+  ) { }
 
   async register(createUserDto: RegisterDto): Promise<User> {
     const errors = await validate(createUserDto);
@@ -23,14 +22,10 @@ export class AuthService {
         .flat();
       throw new BadRequestException({ errors: errorMessages });
     }
-
-    const existingUser = await this.usersService.findByEmail(
-      createUserDto.email,
-    );
+    const existingUser = await this.usersService.findByEmail(createUserDto.email);
     if (existingUser) {
       throw new ConflictException('Email is already registered');
     }
-
     return await this.userRepository.create(createUserDto);
   }
 

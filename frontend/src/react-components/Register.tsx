@@ -31,6 +31,15 @@ function Register() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <div className="flex justify-between mt-4">
+          <button
+            type="button"
+            onClick={() => history("/")}
+            className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300"
+          >
+            Back
+          </button>
+        </div>
         <h2 className="text-2xl text-center font-bold mb-6 text-gray-800">
           Register
         </h2>
